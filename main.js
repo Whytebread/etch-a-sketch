@@ -21,24 +21,22 @@ for (i = 0; i < 256; i++) {
 
 function createGrid() {
     let gridNumber = parseInt(prompt("Enter the number of squares per side (max 100)"));
-    container.innerHTML = ""
-    if (gridNumber > 100) {
-        let gridNumber = parseInt(prompt("Please enter a number less than 100"));
-    } else {
-        for (i = 0; i < gridNumber * gridNumber; i++) {
-            let div = document.createElement("div");
-            div.className = "square";
-            div.style.border = "solid black 1px";
-            div.style.width = 960 / gridNumber + "px";
-            div.style.height = 960 / gridNumber + "px";
-            container.appendChild(div);
-
-            div.addEventListener("mouseover", () => {
-                div.style.backgroundColor = "black";
-            })
-        }
+    while (isNaN(gridNumber) || gridNumber < 1 || gridNumber > 100) {
+        gridNumber = parseInt(prompt("Please enter a number between 1 and 100"));
     }
+    container.innerHTML = ""
+    for (i = 0; i < gridNumber * gridNumber; i++) {
+        let div = document.createElement("div");
+        div.className = "square";
+        div.style.border = "solid black 1px";
+        div.style.width = 960 / gridNumber + "px";
+        div.style.height = 960 / gridNumber + "px";
+        container.appendChild(div);
 
+        div.addEventListener("mouseover", () => {
+            div.style.backgroundColor = "black";
+        })
+    }
 }
 
-gridButton.addEventListener("click", ()=> createGrid());
+gridButton.addEventListener("click", () => createGrid());

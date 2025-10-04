@@ -25,12 +25,12 @@ function createGrid() {
     if (gridNumber > 100) {
         let gridNumber = parseInt(prompt("Please enter a number less than 100"));
     } else {
-        for (i = 0; i < gridNumber; i++) {
+        for (i = 0; i < gridNumber * gridNumber; i++) {
             let div = document.createElement("div");
             div.className = "square";
             div.style.border = "solid black 1px";
-            div.style.width = 960 / gridNumber;
-            div.style.height = auto;
+            div.style.width = 960 / gridNumber + "px";
+            div.style.height = 960 / gridNumber + "px";
             container.appendChild(div);
 
             div.addEventListener("mouseover", () => {

@@ -6,11 +6,11 @@ for (i = 0; i < 256; i++) {
     let div = document.createElement("div");
     div.className = "square";
     div.style.border= "solid black 1px";
-    div.style.width= "50px";
-    div.style.height= "50px";
+    div.style.width= "60px";
+    div.style.height= "60px";
     container.appendChild(div);
 
-    // event listenter 
+    // event listenter to change inital grid color
 
 div.addEventListener("mouseover", ()=> {
     div.style.backgroundColor = "black";
@@ -18,3 +18,7 @@ div.addEventListener("mouseover", ()=> {
 
 }
 
+// function createGrid {
+//     container.innerHTML=""
+    
+// }

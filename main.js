@@ -41,4 +41,4 @@ function createGrid() {
 
 }
 
-gridButton.addEventListener("click", createGrid());
+gridButton.addEventListener("click", ()=> createGrid());
